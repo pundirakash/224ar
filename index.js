@@ -13,7 +13,6 @@ app.use(express.json());
 function tokenVerify(req,res,next){
     const tokenHeader=req.headers.authorization;
     // "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJha2FzaCIsInJvbGUiOiJmYWN1bHR5IiwiaWF0IjoxNzc1NjI3MjA4LCJleHAiOjE3NzU2MzA4MDh9.UE2ZxFbsP2r3WoJGXTrH0Sl1S_QJk-TtaXTEuiEB1j0"
-    console.log("New line");
     const token=tokenHeader.split(" ")[1];
     try{
         const decode=jwt.verify(token,SECRET);
